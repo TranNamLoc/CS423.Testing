@@ -1,25 +1,25 @@
 name: Node.js CI
 
-on:
-  push:
-    branches: [main, dev]
-  pull_request:
-    branches: [main, dev]
+on: #When to run
+  push: #What to run
+    branches: [main, dev] #Where to run
+  pull_request: #What to run
+    branches: [main, dev] #Where to run
 
-jobs:
+jobs: #What to automate
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #operating system
 
     strategy:
       matrix:
         node-version: [10.x, 12.x]
 
-    steps:
+    steps: #step to run the automation
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 #navigate GitHub action to the branch(es) where the 'on' occur
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v1 #set up the environment in the 'matrix'
         with:
           node-version: ${{ matrix.node-version }}
 
