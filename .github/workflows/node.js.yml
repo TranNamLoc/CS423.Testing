@@ -2,9 +2,9 @@ name: Node.js CI
 
 on: #When to run
   push: #What to run
-    branches: [master, dev] #Where to run
+    branches: [main, dev] #Where to run
   pull_request: #What to run
-    branches: [master, dev] #Where to run
+    branches: [main, dev] #Where to run
 
 jobs: #What to automate
   build:
